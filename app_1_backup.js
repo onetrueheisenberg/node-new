@@ -1,33 +1,22 @@
+console.log("Starting notes app");
+
 var fs = require("fs");
 var _ = require("lodash");
 var notes = require("./notes");
 var yargs = require("yargs");
+var json = require("./playground/json");
+var person = require("./playground/person");
 
-var userOptions = {
-    describe : "User of note",
-    demand : true,
-    alias : "n"
-};
-
-var bodyOptions = {
-    describe : "Contents of note",
-    demand : true,
-    alias : "b"
-};
-var argv = yargs.command("add", "Add a new note", {
-    user : userOptions,
-    body : bodyOptions
-})
-.command("list", "List all the notes present")
-.command("get", "Get a note by user", {
-    user : userOptions
-})
-.command("delete", "Delete a note by user", {
-    user : userOptions
-})
-.help()
-.argv;
+argv = yargs.argv;
 var command = process.argv[2];
+console.log(argv);
+console.log(command);
+
+json.writeNote("notes-data.json");
+json.readNote("notes-data.json");
+console.log(JSON.stringify(json.name));
+console.log(typeof json.name + typeof json.age);
+console.log(person.parse.name);
 
 if(command === "add")
 {

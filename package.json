@@ -17,6 +17,12 @@
   },
   "homepage": "https://github.com/onetrueheisenberg/node-new#readme",
   "dependencies": {
-    "nodemon": "^1.18.10"
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "lodash": "^4.17.11",
+    "mongoose": "^5.4.15",
+    "nodemon": "^1.18.10",
+    "yargs": "^13.2.1"
   }
 }
